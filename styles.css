@@ -1,0 +1,204 @@
+html{
+    background-color: #020873;
+}
+
+h1 {
+    font-size:1.25em;
+}
+h2, h3 {
+    font-size: 1em;
+}
+p, dl, dd {
+    font-size: 1em;
+}
+footer p {
+    font-size: .75em;
+}
+
+body{
+    width:375px;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+}
+
+header{
+    background-color: #030a8c;
+    color: white;
+    display: flex;
+}
+
+nav a{
+    color:white;
+    text-decoration: none;
+    
+}
+nav li{
+    list-style-type: none;
+    margin-top: 1rem;
+    font-size: .75em;
+}
+
+#blurb{
+    color: white;
+    background-image: linear-gradient(to right, #2104D9 , #020659);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+}
+
+#trend{
+    margin: 1rem;
+    color:#590242;
+}
+
+#trending{
+    background-color: white;
+    
+}
+
+#trending audio{
+    opacity: 75%;
+}
+
+#trending div{
+    background-color: white;
+    opacity: 75%;
+    color: #590242;
+    margin-top: -.75rem;
+    padding-bottom: 1.5rem;
+}
+#trending dl{
+    margin-top:-1rem;
+    padding: 0rem;
+}
+
+main a{
+    text-decoration: none;
+    background-color: #590242;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    margin-left: 2rem;
+    
+}
+
+#curated{
+    display:grid;
+}
+
+@media screen and(min-width:834px){
+    body{
+        width: 834px;
+    }
+    #trending {
+        width: 834px;
+    }
+}
+
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    }
+}
+
+.scroll{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.scroll section{
+    margin: 10px;
+    position: relative;
+}
+.scroll div{
+    position: absolute;
+    top: 251px;
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+dl {
+    display: flex;
+}
+dt{
+    padding-right: 5px
+}
+audio{
+    position: absolute;
+    bottom: 150px;
+    left: 5px;
+}
+#trending, #playlists, #curated{
+    width:375px;
+    display: flex;
+    overflow: scroll;
+}
+
+
